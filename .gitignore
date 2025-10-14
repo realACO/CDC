@@ -1,0 +1,21 @@
+# Ignore everything
+*
+
+# Allow cpp files
+!*.cpp
+
+# Allow headers (optional)
+!*.h
+!*.hpp
+
+# Ignore compiled/binary files
+*.exe
+*.out
+*.o
+*.obj
+*.dll
+*.so
+
+# Allow files with no extension
+!*/
+!*[!.]*
