@@ -1,21 +1,31 @@
 # Ignore everything
 *
 
-# Allow cpp files
-!*.cpp
-
-# Allow headers (optional)
-!*.h
-!*.hpp
-
-# Ignore compiled/binary files
-*.exe
-*.out
-*.o
-*.obj
-*.dll
-*.so
-
-# Allow files with no extension
+# But not these directories
 !*/
-!*[!.]*
+
+# Only track C++ source and header files
+!*.cpp
+!*.h
+
+# Ignore common build artifacts and temp files
+*.exe
+*.obj
+*.o
+*.out
+*.log
+*.tmp
+*.class
+
+# Ignore IDE/editor-specific files
+.vscode/
+.idea/
+*.suo
+*.user
+*.vcxproj*
+*.sln
+*.code-workspace
+
+# Ignore OS-specific junk
+.DS_Store
+Thumbs.db

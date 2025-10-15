@@ -1,0 +1,19 @@
+#include<bits/stdc++.h>
+using namespace std;
+class Solution {
+public:
+    void rotate(vector<vector<int>>& m) {
+        for(int i=0;i<m.size();i++){
+            for(int j=0;j<=i;j++){
+                swap(m[i][j],m[j][i]);
+            }
+        }
+        for(int i=0;i<m.size();i++){
+            int s=0;
+            int e=m[0].size()-1;
+            while(s<=e){
+                swap(m[i][s++],m[i][e--]);
+            }
+        }
+    }
+};
