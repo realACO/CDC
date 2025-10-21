@@ -3,20 +3,9 @@ using namespace std;
 //brute force approach
 //start iterating from i=strat to end of the vector
 //for each iteration again iterate fromj=i+1 to end
-//if duplicates are encountered then store it in a 
-void findRepeatingElements(vector<int> arr) {
-    int n=arr.size();
-	    int cnt = 0;
-	    int dup[n] ;
-	    for(int i=0;i<n-1;i++) {
-	        for(int j=i+1;j<n;j++) {
-	            if(arr[i]==arr[j]) dup[cnt++] = arr[i];
-	        }
-	    }
-	    cout<<"The repeating elements are: ";
-	    for(int i=0;i<cnt;i++) 
-	        if(dup[i] != dup[i+1]) cout<<dup[i]<<" ";
-}
+//if duplicates are encountered then store it in ans
+//there are chances that in the answer vector there are more that one simirlar elements
+//but these elements will be adjacent to each other so while printing just check the same and print
 vector<int> RepeatingElement(vector<int> arr){
     //store the count of each elemnt of arr in map
     unordered_map<int,int> m;
@@ -37,8 +26,6 @@ vector<int> RepeatingElement(vector<int> arr){
 }
 int main(){
     vector<int> a={1,1,2,3,4,4,5,1,2};
-    findRepeatingElements(a);
-    cout<<endl;
     a=RepeatingElement(a);
     for(int i:a){
         cout<<i<<" ";

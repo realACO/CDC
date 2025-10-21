@@ -10,6 +10,7 @@ int UpperBoundd(vector<int> arr,int val){
     int s=0;
     int e=arr.size()-1;
     int ans=-1;
+    //using binary search to so the same what we did earlier
     while(s<=e){
         int m=s+(e-s)/2;
         if(arr[m]>=val){

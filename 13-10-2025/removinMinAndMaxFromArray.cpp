@@ -33,3 +33,5 @@ public:
         return ans;
     }
 };
+
+//https://leetcode.com/problems/removing-minimum-and-maximum-from-array/description/

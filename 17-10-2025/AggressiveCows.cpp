@@ -3,7 +3,7 @@ using namespace std;
 class Solution {
   public:
     bool canBePlaced(vector<int> &arr,int cows,int dist){
-        //initially one cow is placed, base condn total cows wil alws be greater than 1
+        //initially one cow is placed, base condn total cows wil alws be greater than equal to 1
         int cowcnt=1;
 
         //we will start by placing the cow at first index of array
