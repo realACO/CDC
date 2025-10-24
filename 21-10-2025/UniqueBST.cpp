@@ -18,6 +18,8 @@ public:
 class Solution {
 public:
     //helper function to pass the dp vector also
+    //this is called top down dp
+    //no idea what is it, but understood the code
     int solve(int n,vector<int> &dp){
         if(n<=1)return 1;
         if(dp[n]!=-1)return dp[n];//if ans for n is inside dp vector return it directly
@@ -34,7 +36,19 @@ public:
     }
 };
 
-
+//best solution- just return the nth catalan number (2n)!/(n+1)!(n)!
+class Solution {
+public:
+    int numTrees(int n) {
+        if(n==1||n==0)return 1;
+        long long res=1;
+        for(int i=0;i<n;i++){
+            res=res*(2*n-i)/(i+1);
+        }
+        res/=(n+1);
+        return  res;
+    }
+};
 
 class Solution {
 //its complex i didnt undertand
