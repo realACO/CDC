@@ -60,27 +60,25 @@ class Solution {
 };
 
 
-class Solution {
-  public:
-    int maximumPoints(vector<vector<int>>& arr) {
-        int days=arr.size();
-        int a=max(arr[0][1],arr[0][2]);
-        int b=max(arr[0][0],arr[0][2]);
-        int c=max(arr[0][1],arr[0][0]);
-        int d=max({arr[0][1],arr[0][2],arr[0][0]});
-        vector<int> temp={a,b,c,d};
-        for(int i=1;i<days;i++){
-            vector<int> t(4,0);
-            for(int j=0;j<3;j++){
-                t[j]=0;
-                for(int k=0;k<3;k++){
-                    if(j!=k){
-                        t[j]=max(t[j],arr[i][k]+temp[k]);
-                    }
+#include<bits/stdc++.h>
+int ninjaTraining(int n, vector<vector<int>> &points)
+{
+    int days=points.size();
+    vector<int> dp(3,-1);
+    dp[0]=max(points[0][1],points[0][2]);//pick 0 and max of other 2
+    dp[1]=max(points[0][0],points[0][2]);
+    dp[2]=max(points[0][0],points[0][1]);
+    for(int i=1;i<n;i++){
+        vector<int> temp(3);
+        for(int j=0;j<3;j++){
+            temp[j]=0;
+            for(int k=0;k<3;k++){
+                if(k!=j){
+                    temp[j]=max(temp[j],points[i][k]+dp[k]);
                 }
             }
-            temp=t;
         }
-        return max({temp[1],temp[0],temp[2]});
+        dp=temp;
     }
-};
+    return max({dp[0],dp[1],dp[2]});
+}
